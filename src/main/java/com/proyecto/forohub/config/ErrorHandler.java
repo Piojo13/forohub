@@ -1,20 +1,27 @@
 package com.proyecto.forohub.config;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestControllerAdvice
 public class ErrorHandler {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public String handleValidationErrors(MethodArgumentNotValidException ex) {
-        // Tomamos los errores de los campos y los convertimos en un string legible
-        return ex.getBindingResult()
+    public ResponseEntity<Map<String, String>> handleValidationErrors(MethodArgumentNotValidException ex) {
+
+        Map<String, String> errores = ex.getBindingResult()
                 .getFieldErrors()
                 .stream()
-                .map(err -> err.getField() + ": " + err.getDefaultMessage())
-                .collect(Collectors.joining(", "));
+                .collect(Collectors.toMap(
+                        err -> err.getField(),
+                        err -> err.getDefaultMessage()
+                ));
+
+        return ResponseEntity.badRequest().body(errores);
     }
 }
