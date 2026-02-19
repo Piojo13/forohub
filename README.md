@@ -23,12 +23,33 @@ Proyecto realizado como challenge backend.
 
 ## 📂 Estructura del Proyecto
 
-com.proyecto.forohub │ ├── config │ ├── SecurityConfiguration │ ├──
-JwtAuthenticationFilter │ └── ErrorHandler │ ├── controller │ ├──
-TopicoController │ └── AutenticacionController │ ├── dto │ ├──
-DatosRegistroTopico │ ├── DatosListadoTopico │ └── DatosAutenticacion │
-├── model │ ├── Topico │ └── Usuario │ ├── repository │ ├──
-TopicoRepository │ └── UsuarioRepository │ └── service └── TokenService
+com.proyecto.forohub
+│
+├── config
+│   ├── SecurityConfiguration
+│   ├── JwtAuthenticationFilter
+│   └── ErrorHandler
+│
+├── controller
+│   ├── TopicoController
+│   └── AutenticacionController
+│
+├── dto
+│   ├── DatosRegistroTopico
+│   ├── DatosListadoTopico
+│   └── DatosAutenticacion
+│
+├── model
+│   ├── Topico
+│   └── Usuario
+│
+├── repository
+│   ├── TopicoRepository
+│   └── UsuarioRepository
+│
+└── service
+    └── TokenService
+
 
 ------------------------------------------------------------------------
 
