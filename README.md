@@ -23,32 +23,32 @@ Proyecto realizado como challenge backend.
 
 ## 📂 Estructura del Proyecto
 
-com.proyecto.forohub
+src/main/java/com/proyecto/forohub
+├── config/
+│   ├── SecurityConfiguration.java
+│   ├── JwtAuthenticationFilter.java
+│   └── ErrorHandler.java
 │
-├── config
-│   ├── SecurityConfiguration
-│   ├── JwtAuthenticationFilter
-│   └── ErrorHandler
+├── controller/
+│   ├── TopicoController.java
+│   └── AutenticacionController.java
 │
-├── controller
-│   ├── TopicoController
-│   └── AutenticacionController
+├── dto/
+│   ├── DatosRegistroTopico.java
+│   ├── DatosListadoTopico.java
+│   └── DatosAutenticacion.java
 │
-├── dto
-│   ├── DatosRegistroTopico
-│   ├── DatosListadoTopico
-│   └── DatosAutenticacion
+├── model/
+│   ├── Topico.java
+│   └── Usuario.java
 │
-├── model
-│   ├── Topico
-│   └── Usuario
+├── repository/
+│   ├── TopicoRepository.java
+│   └── UsuarioRepository.java
 │
-├── repository
-│   ├── TopicoRepository
-│   └── UsuarioRepository
-│
-└── service
-    └── TokenService
+└── service/
+    └── TokenService.java
+
 
 
 ------------------------------------------------------------------------
